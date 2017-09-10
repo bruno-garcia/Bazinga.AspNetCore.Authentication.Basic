@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bazinga.AspNetCore.Authentication.Basic", "Bazinga.AspNetCore.Authentication.Basic\Bazinga.AspNetCore.Authentication.Basic.csproj", "{E985168C-8C34-4426-A6D0-5EF5EF4BD641}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E985168C-8C34-4426-A6D0-5EF5EF4BD641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E985168C-8C34-4426-A6D0-5EF5EF4BD641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E985168C-8C34-4426-A6D0-5EF5EF4BD641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E985168C-8C34-4426-A6D0-5EF5EF4BD641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FF722EB-8094-4F3A-92C5-D4DE19B3C998}
+	EndGlobalSection
+EndGlobal
