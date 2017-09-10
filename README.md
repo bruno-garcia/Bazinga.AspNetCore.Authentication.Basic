@@ -10,11 +10,11 @@ Sample usages, with hard-coded credentials:
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
-        services.AddAuthentication()
-            .AddBasicAuthentication(credentials => 
-                Task.FromResult(
-                    credentials.username == "myUsername" 
-                    && credentials.password == "myPassword"));
+    services.AddAuthentication()
+        .AddBasicAuthentication(credentials => 
+            Task.FromResult(
+                credentials.username == "myUsername" 
+                && credentials.password == "myPassword"));
 }
 ```
 
