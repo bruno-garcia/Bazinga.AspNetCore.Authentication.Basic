@@ -74,7 +74,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
 
                 Logger.LogInformation("Successfully validated credentials for {userid}.", userpass.userid);
 
-                var claims = new[] { new Claim(ClaimTypes.Name, userpass.userid, ClaimValueTypes.String, Options.ClaimsIssuer) };
+                var claims = new[] { new Claim(ClaimTypes.Name, userpass.userid, ClaimValueTypes.String, ClaimsIssuer) };
                 var principal = new ClaimsPrincipal(new ClaimsIdentity(claims, Scheme.Name));
 
                 var successContext = new AuthenticationSucceededContext(userpass.userid, Context, Scheme, Options)
