@@ -18,7 +18,15 @@ namespace Bazinga.AspNetCore.Authentication.Basic
         /// </summary>
         public Func<AuthenticationSucceededContext, Task> OnCredentialsValidated { get; set; } = context => Task.CompletedTask;
 
+        /// <summary>
+        /// Invoked before a challenge is sent back to the caller.
+        /// </summary>
+        public Func<BasicAuthenticationChallengeContext, Task> OnChallenge { get; set; } = context => Task.CompletedTask;
+
         public virtual Task AuthenticationFailed(AuthenticationFailedContext context) => OnAuthenticationFailed(context);
+
         public virtual Task CredentialsValidated(AuthenticationSucceededContext context) => OnCredentialsValidated(context);
+
+        public virtual Task Challenge(BasicAuthenticationChallengeContext context) => OnChallenge(context);
     }
 }

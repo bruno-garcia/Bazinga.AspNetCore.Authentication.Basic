@@ -4,8 +4,10 @@ using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Net.Http.Headers;
 
 namespace Bazinga.AspNetCore.Authentication.Basic
 {
@@ -106,6 +108,24 @@ namespace Bazinga.AspNetCore.Authentication.Basic
 
                 throw;
             }
+        }
+
+        protected override async Task HandleChallengeAsync(AuthenticationProperties properties)
+        {
+            var authResult = await HandleAuthenticateOnceSafeAsync();
+            var eventContext = new BasicAuthenticationChallengeContext(Context, Scheme, Options, properties)
+            {
+                AuthenticateFailure = authResult?.Failure
+            };
+
+            await Events.Challenge(eventContext);
+            if (eventContext.Handled)
+            {
+                return;
+            }
+
+            Response.StatusCode = 401;
+            Response.Headers.Append(HeaderNames.WWWAuthenticate, Options.Challenge);
         }
     }
 }

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Description>Basic Authentication Scheme for ASP.NET Core 2.0</Description>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>basic authentication;aspnetcore;authentication;security</PackageTags>
   </PropertyGroup>
