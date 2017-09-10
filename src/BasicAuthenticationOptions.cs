@@ -19,7 +19,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
         /// <summary>
         /// Gets the challenge to put in the "WWW-Authenticate" header.
         /// </summary>
-        public string Challenge => $"{BasicAuthenticationDefaults.AuthenticationScheme} realm={Realm}";
+        public string Challenge => $"{BasicAuthenticationDefaults.AuthenticationScheme} realm=\"{Realm}\"";
 
         /// <summary>
         /// The object provided by the application to process events raised by the basic authentication handler.
