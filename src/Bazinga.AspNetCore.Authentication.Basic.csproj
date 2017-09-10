@@ -1,11 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>Bazinga.AspNetCore.Authentication.Basic</PackageId>
+    <Authors>Bruno Garcia</Authors>
     <Description>Basic Authentication Scheme for ASP.NET Core 2.0</Description>
+    <PackageVersion>0.0.0</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>basic authentication;aspnetcore;authentication;security</PackageTags>
+    <PackageProjectUrl>https://github.com/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
