@@ -103,7 +103,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic.Tests
             var sp = services.BuildServiceProvider();
             var verifier = sp.GetRequiredService<IBasicCredentialVerifier>();
             Assert.NotNull(verifier);
-            Assert.Equal(verfierIsSingleton, sp.GetRequiredService<IBasicCredentialVerifier>() == sp.GetRequiredService<IBasicCredentialVerifier>());
+            Assert.Equal(verfierIsSingleton, verifier == sp.GetRequiredService<IBasicCredentialVerifier>());
 
             var schemeProvider = sp.GetRequiredService<IAuthenticationSchemeProvider>();
             var scheme = await schemeProvider.GetSchemeAsync(expectedScheme);

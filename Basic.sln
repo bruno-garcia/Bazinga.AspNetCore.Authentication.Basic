@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bazinga.AspNetCore.Authentication.Basic", "src\Bazinga.AspNetCore.Authentication.Basic.csproj", "{31259966-79BA-4B6B-BF41-80203B695DEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bazinga.AspNetCore.Authentication.Basic.Tests", "test\Bazinga.AspNetCore.Authentication.Basic.Tests\Bazinga.AspNetCore.Authentication.Basic.Tests.csproj", "{5034702C-BC8F-4E8F-AE15-DB3EE261D196}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bazinga.AspNetCore.Authentication.Basic.Tests", "test\Bazinga.AspNetCore.Authentication.Basic.Tests.csproj", "{5034702C-BC8F-4E8F-AE15-DB3EE261D196}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
