@@ -1,4 +1,5 @@
-# Bazinga.AspNetCore.Authentication.Basic [![Build status](https://ci.appveyor.com/api/projects/status/hnl0ixy7oa7mrq7x/branch/master?svg=true)](https://ci.appveyor.com/project/bruno-garcia/bazinga-aspnetcore-authentication-basic/branch/master) [![NuGet](https://img.shields.io/nuget/v/Bazinga.AspNetCore.Authentication.Basic.svg)](https://www.nuget.org/packages/Bazinga.AspNetCore.Authentication.Basic/)
+# Bazinga.AspNetCore.Authentication.Basic 
+[![Build status](https://ci.appveyor.com/api/projects/status/hnl0ixy7oa7mrq7x/branch/master?svg=true)](https://ci.appveyor.com/project/bruno-garcia/bazinga-aspnetcore-authentication-basic/branch/master) [![NuGet](https://img.shields.io/nuget/v/Bazinga.AspNetCore.Authentication.Basic.svg)](https://www.nuget.org/packages/Bazinga.AspNetCore.Authentication.Basic/)
 [![codecov](https://codecov.io/gh/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic/branch/master/graph/badge.svg)](https://codecov.io/gh/bruno-garcia/Bazinga.AspNetCore.Authentication.Basic)
 Basic Authentication for Microsoft ASP.NET Core Security
 
