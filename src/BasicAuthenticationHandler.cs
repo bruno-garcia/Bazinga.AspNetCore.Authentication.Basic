@@ -29,7 +29,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock)
-            : base(options, logger, encoder, clock) 
+            : base(options, logger, encoder, clock)
             => _authenticationVerifier = authenticationVerifier ?? throw new ArgumentNullException(nameof(authenticationVerifier));
 
         // https://tools.ietf.org/html/rfc2617#section-2
@@ -93,7 +93,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
             }
             catch (Exception ex)
             {
-                Logger.LogError("Exception occurred while processing message.", ex);
+                Logger.LogError(ex, "Exception occurred while processing message.");
 
                 var authenticationFailedContext = new AuthenticationFailedContext(Context, Scheme, Options)
                 {
