@@ -5,6 +5,8 @@ build_script:
   - cmd: dotnet test test\Bazinga.AspNetCore.Authentication.Basic.Tests.csproj -c Release
 after_build:
   - cmd: dotnet pack --no-build -c Release
+on_success:
+  - ps: .\coverage.ps1 -UploadCodecov
 environment:
   global:
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
