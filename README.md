@@ -12,7 +12,7 @@ Sample usages, with hard-coded credentials:
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
-    services.AddAuthentication()
+    services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
         .AddBasicAuthentication(credentials => 
             Task.FromResult(
                 credentials.username == "myUsername" 
