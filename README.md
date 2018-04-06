@@ -53,6 +53,48 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
+If you need to include your own claim types, after the user is authenticated, an event called OnCredentialsValidated is dispatched, see the code below:
+
+```csharp
+public void ConfigureServices()
+{
+    services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
+        .AddBasicAuthentication<BasicAuthenticationVerifier>(options => {
+            options.Events = new BasicAuthenticationEvents()
+            {
+                OnCredentialsValidated = (context) =>
+                {
+                    context.Principal = new ClaimsPrincipal(); // New instance of claims principal with your claims
+                    return Task.FromResult(context);
+                }
+            };
+        });
+
+}
+```
+
+If inside the function you need call a service from DI, you can use:
+
+```csharp
+public void ConfigureServices()
+{
+    services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
+        .AddBasicAuthentication<BasicAuthenticationVerifier>(options => {
+            options.Events = new BasicAuthenticationEvents()
+            {
+                OnCredentialsValidated = (context) =>
+                {
+                    var authService = context.HttpContext.RequestServices.GetRequiredService<AuthenticationService>();
+
+                    context.Principal = authService.GetClaimPrincipal(); // New instance of claims principal with your claims
+                    return Task.FromResult(context);
+                }
+            };
+        });
+
+}
+```
+
 For better understanding of the ASP.NET Core Identity, see [Microsoft docs](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity)
 # License
 
