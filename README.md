@@ -25,7 +25,7 @@ Or by defining a service to register. Allowing your validator to take dependenci
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddAuthorization()
+    services.AddAuthentication(BasicAuthenticationDefaults.AuthenticationScheme)
         .AddBasicAuthentication<DatabaseBasicCredentialVerifier>();
 }
 
@@ -49,7 +49,7 @@ And finally, since ASP.NET Core 2.0, the single middeware for authentication:
 public void Configure(IApplicationBuilder app)
 {
     app.UseAuthentication();
-    app.AddMvc();
+    app.UseMvc();
 }
 ```
 
