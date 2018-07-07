@@ -95,6 +95,9 @@ public void ConfigureServices()
 }
 ```
 
+Regardless the configuration above you choose to use, you need to ensure your controller expects an authenticated user. 
+That can be acomplished in different ways, one being the: `[Authorize]` attribute. [See Microsoft docs](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple?view=aspnetcore-2.1) for more.
+
 For better understanding of the ASP.NET Core Identity, see [Microsoft docs](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity)
 # License
 
