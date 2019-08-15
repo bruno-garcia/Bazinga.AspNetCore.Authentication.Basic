@@ -1,6 +1,7 @@
 <Project>
   <PropertyGroup>
     <LangVersion>8.0</LangVersion>
-    <Nullable>enable</Nullable>
+    <Nullable Condition="'$(TargetFramework)' == 'netcoreapp3_0'">enable</Nullable>
+    <NoWarn Condition="'$(TargetFramework)' != 'netcoreapp3_0'">$(NoWarn);CS8632</NoWarn>
   </PropertyGroup>
 </Project>
