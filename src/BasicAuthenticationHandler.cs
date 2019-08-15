@@ -64,13 +64,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
                     return AuthenticateResult.NoResult();
                 }
 
-#if NETCOREAPP3_0
                 var userpass = DecodeUserIdAndPassword(encodedAuth);
-#else
-                // It needs bang ! because it's confused on netstandard2.0 as
-                // IsNullOrEmpty is not annotated with [NotNullWhen(true)]
-                var userpass = DecodeUserIdAndPassword(encodedAuth);
-#endif
                 if (!await _authenticationVerifier.Authenticate(userpass.userid, userpass.password))
                 {
                     Logger.LogInformation("Failed to validate {userid}.", userpass.userid);
