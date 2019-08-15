@@ -24,9 +24,14 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
-    <Package Include="Microsoft.Extensions.DependencyInjection" />
-    <Package Include="Microsoft.Extensions.Options" />
-    <Package Include="Microsoft.AspNetCore.Authentication" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0-preview8.19405.4" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="3.0.0-preview8.19405.4" />
+<!--    preview8 bits use 'Package' as package is not available out-of-bound:-->
+<!--    https://github.com/aspnet/AspNetCore/blob/4a42afc5aea63750638e118560d43db04bd9ccc2/src/Security/Authentication/JwtBearer/src/Microsoft.AspNetCore.Authentication.JwtBearer.csproj#L13-->
+<!--    This doesn't work here though. Even though we're under netcoreapp3.0 it won't find the package.-->
+<!--    <Package Include="Microsoft.AspNetCore.Authentication" />-->
+<!--    Using v2.0.0 from NuGet until this is sorted-->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
