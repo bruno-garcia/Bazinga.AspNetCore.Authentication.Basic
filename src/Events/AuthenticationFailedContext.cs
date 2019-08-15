@@ -12,7 +12,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
         /// <summary>
         /// The exception thrown while authenticating the request
         /// </summary>
-        public Exception Exception { get; set; }
+        public Exception? Exception { get; set; }
 
         /// <summary>
         /// Authentication Failed Context constructor

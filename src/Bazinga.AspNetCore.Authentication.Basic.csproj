@@ -5,7 +5,7 @@
     <Authors>Bruno Garcia</Authors>
     <Description>Basic Authentication Scheme for ASP.NET Core 2.0</Description>
     <PackageVersion>0.0.0</PackageVersion>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>basic authentication;aspnetcore;authentication;security</PackageTags>

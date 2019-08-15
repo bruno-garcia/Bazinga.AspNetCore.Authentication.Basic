@@ -14,7 +14,7 @@ namespace Bazinga.AspNetCore.Authentication.Basic
         /// <value>
         /// The Realm 
         /// </value>
-        public string Realm { get; set; }
+        public string? Realm { get; set; }
 
         /// <summary>
         /// Gets the challenge to put in the "WWW-Authenticate" header.

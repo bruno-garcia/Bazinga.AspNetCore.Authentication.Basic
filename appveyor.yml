@@ -10,10 +10,16 @@ after_build:
   - cmd: dotnet pack --no-build -c Release
 on_success:
   - ps: .\coverage.ps1 -UploadCodecov
+install:
+  - ps: $env:DOTNET_INSTALL_DIR = "$pwd\.dotnetsdk"
+  - ps: mkdir $env:DOTNET_INSTALL_DIR -Force | Out-Null
+  - ps: $installScript = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), [System.IO.Path]::GetRandomFileName())
+  - ps: Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile $installScript -UseBasicParsing
+  - ps: & $installScript -Version "$env:DOTNET_VERSION" -InstallDir "$env:DOTNET_INSTALL_DIR" -NoPath
+  - ps: $env:Path = "$env:DOTNET_INSTALL_DIR;$env:Path"
 environment:
   global:
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-    DOTNET_CLI_TELEMETRY_OPTOUT: 1
+    DOTNET_VERSION: 3.0.100-preview3-010431
 test: off
 os: Visual Studio 2017
 dotnet_csproj:
