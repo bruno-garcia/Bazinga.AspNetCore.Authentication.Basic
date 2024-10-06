@@ -43,12 +43,13 @@ public class DatabaseBasicCredentialVerifier : IBasicCredentialVerifier
 }
 ```
 
-And finally, since ASP.NET Core 2.0, the single middeware for authentication:
+And finally, middeware for authentication:
 
 ```csharp
 public void Configure(IApplicationBuilder app)
 {
-    app.UseAuthentication();
+    app.UseAuthentication(); 
+    app.UseAuthorization();
     app.UseMvc();
 }
 ```
